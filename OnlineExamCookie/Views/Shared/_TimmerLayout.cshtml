@@ -1,0 +1,28 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/OnlineExamCookie.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+<div id="timer">Time remaining: <span id="countdown">30</span> seconds</div>
+<script src="~/js/Timmer.js"></script>
+<script>
+    startCountdown(); // Call the function to start the countdown
+</script>
+
+</body>
+
+</html>

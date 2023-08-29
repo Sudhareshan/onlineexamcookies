@@ -1,0 +1,43 @@
+﻿@model OnlineExamCookie.Models.QuestionModel
+@*<div id="timer">Time remaining: <span id="countdown">30</span> seconds</div>*@
+
+<h1>Question 2</h1>
+@{
+    Layout = "_TimmerLayout";
+}
+<hr />
+<br />
+<form asp-action="Question2" asp-controller="Quiz">
+    <label asp-for="QuestionText">@Model.QuestionText</label>
+    <br />
+    @foreach (var item in Model.Options)
+    {
+        <input type="radio" asp-for="SeletedOption" value="@item">
+
+        @item
+        <br />
+    }
+    <button type="submit" class="btn btn-primary">Next</button>
+</form>
+@*<script src="~/js/Timmer.js"></script>
+<script>
+    startCountdown(); // Call the function to start the countdown
+</script>*@
+@*<script>
+    // Add JavaScript code to handle the countdown timer
+    var countdownElement = document.getElementById("countdown");
+    var countdown = 30; // Initial countdown time in seconds
+
+    function updateCountdown() {
+        countdown--;
+        countdownElement.textContent = countdown;
+
+        if (countdown <= 0) {
+            // Time's up! Submit the answer
+            document.querySelector("form").submit();
+        }
+    }
+
+    // Start the countdown timer
+    var timerInterval = setInterval(updateCountdown, 1000);
+</script>*@
